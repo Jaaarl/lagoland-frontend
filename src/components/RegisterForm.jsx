@@ -3,7 +3,7 @@ import API from '../api';
 import { useNavigate } from 'react-router-dom';
 
 export default function RegisterForm() {
-  const [form, setForm] = useState({ username: '', password: '' });
+  const [form, setForm] = useState({ username: '', password: '', name: '' });
   const navigate = useNavigate();
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
@@ -28,6 +28,12 @@ export default function RegisterForm() {
         name="username"
         onChange={handleChange}
         placeholder="Username"
+        className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+      />
+      <input
+        name="name"
+        onChange={handleChange}
+        placeholder="Name"
         className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
       />
       <input
